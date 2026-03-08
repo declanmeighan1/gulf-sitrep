@@ -17,11 +17,14 @@
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 
-  <!-- Recharts (bundles d3 internally) -->
-  <script src="https://unpkg.com/recharts@2.7.2/umd/Recharts.js"></script>
+  <!-- PropTypes (required by Recharts) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.8.1/prop-types.min.js"></script>
+
+  <!-- Recharts via jsDelivr -->
+  <script src="https://cdn.jsdelivr.net/npm/recharts@2.7.2/umd/Recharts.js"></script>
 
   <!-- Babel standalone — transpiles JSX in-browser -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.23.3/babel.min.js"></script>
 
   <!-- Data (auto-updated daily by scheduled task) -->
   <script src="gulf-data.js"></script>
