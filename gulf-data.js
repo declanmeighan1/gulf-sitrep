@@ -5,7 +5,7 @@
 
 window.SITREP = {
   asOfDate:    "08 MAR 2026",
-  updatedDate: "08 Mar 2026",
+  updatedDate: "09 Mar 2026",
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ─────────────────────────────────────────
   UAE: [
@@ -16,8 +16,9 @@ window.SITREP = {
     { date:"Mar 4",  day:"D+4", bm:3,   cm:0,  uav:129, total:132,  bmD:-9,   cmD:0,    uavD:6,     totD:-3    },
     { date:"Mar 5",  day:"D+5", bm:7,   cm:0,  uav:131, total:138,  bmD:4,    cmD:0,    uavD:2,     totD:6     },
     { date:"Mar 6",  day:"D+6", bm:9,   cm:0,  uav:112, total:121,  bmD:2,    cmD:0,    uavD:-19,   totD:-17   },
-    { date:"Mar 7",  day:"D+7", pending:true },
-    { date:"Mar 8",  day:"D+8", pending:true },
+    { date:"Mar 7",  day:"D+7", bm:16, cm:0, uav:121, total:137, bmD:7,   cmD:0, uavD:9,   totD:16  },
+    { date:"Mar 8",  day:"D+8", bm:17, cm:0, uav:117, total:134, bmD:1,   cmD:0, uavD:-4,  totD:-3  },
+    { date:"Mar 9",  day:"D+9", pending:true },
   ],
 
   // ── KSA (ESTIMATED — Saudi MOD / CENTCOM / LWJ) ──────────────────────────────
@@ -29,8 +30,9 @@ window.SITREP = {
     { date:"Mar 4",  day:"D+4", bm:0,   cm:0,  uav:17, total:17,  bmD:-2,   cmD:0,    uavD:3,     totD:1    },
     { date:"Mar 5",  day:"D+5", bm:1,   cm:0,  uav:16, total:17,  bmD:1,    cmD:0,    uavD:-1,    totD:0    },
     { date:"Mar 6",  day:"D+6", bm:1,   cm:0,  uav:14, total:15,  bmD:0,    cmD:0,    uavD:-2,    totD:-2   },
-    { date:"Mar 7",  day:"D+7", pending:true },
-    { date:"Mar 8",  day:"D+8", pending:true },
+    { date:"Mar 7",  day:"D+7", bm:1,  cm:0, uav:11, total:12, bmD:0,   cmD:0, uavD:-3,  totD:-3  },
+    { date:"Mar 8",  day:"D+8", bm:0,  cm:0, uav:9,  total:9,  bmD:-1,  cmD:0, uavD:-2,  totD:-3  },
+    { date:"Mar 9",  day:"D+9", pending:true },
   ],
 
   // ── Qatar (ESTIMATED — Qatar MOD / CENTCOM / LWJ) ────────────────────────────
@@ -43,7 +45,8 @@ window.SITREP = {
     { date:"Mar 4",  day:"D+4", bm:5,  cm:0, uav:0,  total:5,  bmD:-3,   cmD:0,    uavD:-7,   totD:-10  },
     { date:"Mar 5",  day:"D+5", bm:4,  cm:0, uav:0,  total:4,  bmD:-1,   cmD:0,    uavD:0,    totD:-1   },
     { date:"Mar 6",  day:"D+6", bm:2,  cm:0, uav:0,  total:2,  bmD:-2,   cmD:0,    uavD:0,    totD:-2   },
-    { date:"Mar 7",  day:"D+7", pending:true },
-    { date:"Mar 8",  day:"D+8", pending:true },
+    { date:"Mar 7",  day:"D+7", bm:2,  cm:0, uav:10, total:12, bmD:0,   cmD:0, uavD:10,  totD:10  },
+    { date:"Mar 8",  day:"D+8", bm:1,  cm:0, uav:6,  total:7,  bmD:-1,  cmD:0, uavD:-4,  totD:-5  },
+    { date:"Mar 9",  day:"D+9", pending:true },
   ],
 };
