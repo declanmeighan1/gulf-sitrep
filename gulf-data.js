@@ -5,8 +5,8 @@
 
 
 window.SITREP = {
-  asOfDate:    "10 MAR 2026",
-  updatedDate: "11 Mar 2026",
+  asOfDate:    "13 MAR 2026",
+  updatedDate: "13 Mar 2026",
 
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
@@ -22,6 +22,9 @@ window.SITREP = {
     { date:"Mar 8",  day:"D+8",  bm:17,  cm:0,  uav:117, total:134,  bmD:1,    cmD:0,    uavD:-4,    totD:-3    },
     { date:"Mar 9",  day:"D+9",  bm:15,  cm:0,  uav:18,  total:33,   bmD:-2,   cmD:0,    uavD:-99,   totD:-101  },
     { date:"Mar 10", day:"D+10", bm:9,   cm:0,  uav:35,  total:44,   bmD:-6,   cmD:0,    uavD:17,    totD:11    },
+    { date:"Mar 11", day:"D+11", bm:6,   cm:7, uav:39,  total:52,   bmD:-3,   cmD:7,    uavD:4,    totD:8    },
+    { date:"Mar 12", day:"D+12", bm:10,  cm:0, uav:26,  total:36,   bmD:4,    cmD:-7,   uavD:-13,  totD:-16  },
+    { date:"Mar 13", day:"D+13", pending:true },
   ],
 
 
@@ -38,6 +41,9 @@ window.SITREP = {
     { date:"Mar 8",  day:"D+8",  bm:0,   cm:0,  uav:9,   total:9,    bmD:-1,   cmD:0,    uavD:-2,    totD:-3    },
     { date:"Mar 9",  day:"D+9",  bm:2,   cm:0,  uav:9,   total:11,   bmD:2,    cmD:0,    uavD:0,     totD:2     },
     { date:"Mar 10", day:"D+10", bm:7,   cm:0,  uav:2,   total:9,    bmD:5,    cmD:0,    uavD:-7,    totD:-2    },
+    { date:"Mar 11", day:"D+11", bm:7,  cm:0, uav:21,  total:28,   bmD:0,    cmD:0,    uavD:19,   totD:19   },
+    { date:"Mar 12", day:"D+12", bm:2,  cm:0, uav:24,  total:26,   bmD:-5,   cmD:0,    uavD:3,    totD:-2   },
+    { date:"Mar 13", day:"D+13", bm:2,  cm:0, uav:38,  total:40,   bmD:0,    cmD:0,    uavD:14,   totD:14   },
   ],
 
 
@@ -55,5 +61,8 @@ window.SITREP = {
     { date:"Mar 8",  day:"D+8",  bm:1,   cm:0,  uav:6,   total:7,    bmD:-1,   cmD:0,    uavD:-4,    totD:-5    },
     { date:"Mar 9",  day:"D+9",  bm:17,  cm:0,  uav:6,   total:23,   bmD:16,   cmD:0,    uavD:0,     totD:16    },
     { date:"Mar 10", day:"D+10", pending:true },
+    { date:"Mar 11", day:"D+11", bm:9,   cm:0, uav:6,  total:15,   bmD:null, cmD:null, uavD:null, totD:null },
+    { date:"Mar 12", day:"D+12", bm:2,   cm:1, uav:4,  total:7,    bmD:-7,   cmD:1,    uavD:-2,   totD:-8   },
+    { date:"Mar 13", day:"D+13", bm:7,   cm:1, uav:10, total:18,   bmD:5,    cmD:0,    uavD:6,    totD:11   },
   ],
 };
