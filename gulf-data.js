@@ -5,8 +5,8 @@
 
 
 window.SITREP = {
-  asOfDate:    "16 MAR 2026",
-  updatedDate: "16 Mar 2026",
+  asOfDate:    "17 MAR 2026",
+  updatedDate: "17 Mar 2026",
 
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
@@ -27,6 +27,7 @@ window.SITREP = {
     { date:"Mar 13", day:"D+13", bm:7,   cm:0,  uav:27,  total:34,   bmD:-3,   cmD:0,    uavD:1,    totD:-2   },
     { date:"Mar 14", day:"D+14", bm:9,   cm:0,  uav:33,  total:42,   bmD:2,    cmD:0,    uavD:6,    totD:8    },
     { date:"Mar 15", day:"D+15", bm:4,   cm:0,  uav:6,   total:10,   bmD:-5,   cmD:0,    uavD:-27,  totD:-32  },
+    { date:"Mar 16", day:"D+16", bm:6,   cm:0,  uav:21,  total:27,   bmD:2,    cmD:0,    uavD:15,   totD:17   },
   ],
 
 
@@ -48,6 +49,7 @@ window.SITREP = {
     { date:"Mar 13", day:"D+13", bm:2,  cm:0, uav:38,  total:40,   bmD:0,    cmD:0,    uavD:14,   totD:14   },
     { date:"Mar 14", day:"D+14", bm:1,   cm:0,  uav:65,  total:66,   bmD:-1,   cmD:0,    uavD:27,   totD:26   },
     { date:"Mar 15", day:"D+15", bm:0,   cm:0,  uav:18,  total:18,   bmD:-1,   cmD:0,    uavD:-47,  totD:-48  },
+    { date:"Mar 16", day:"D+16", bm:0,   cm:0,  uav:60,  total:60,   bmD:0,    cmD:0,    uavD:42,   totD:42   },
   ],
 
 
