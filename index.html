@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gulf Theater SITREP — Iranian Projectile Launches</title>
-  <meta name="description" content="Iranian projectile launch tracking dashboard — UAE, KSA, Qatar. Updated daily." />
+  <title>Gulf Theater SITREP â Iranian Projectile Launches</title>
+  <meta name="description" content="Iranian projectile launch tracking dashboard â UAE, KSA, Qatar. Updated daily." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #f5f0e8; }
@@ -23,14 +23,14 @@
   <!-- Recharts via jsDelivr -->
   <script src="https://cdn.jsdelivr.net/npm/recharts@2.7.2/umd/Recharts.js"></script>
 
-  <!-- Babel standalone — transpiles JSX in-browser -->
+  <!-- Babel standalone â transpiles JSX in-browser -->
   <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.23.3/babel.min.js"></script>
 
   <!-- Data (auto-updated daily by scheduled task) -->
   <script src="gulf-data.js"></script>
 </head>
 <body>
-  <div id="root"><div class="loading">Loading SITREP…</div></div>
+  <div id="root"><div class="loading">Loading SITREPâ¦</div></div>
 
   <script type="text/babel">
     const {
@@ -38,10 +38,10 @@
       Tooltip, Legend, ResponsiveContainer
     } = window.Recharts;
 
-    // ── Read live data from gulf-data.js ──────────────────────────────────────
+    // ââ Read live data from gulf-data.js ââââââââââââââââââââââââââââââââââââââ
     const { UAE, KSA, QAT, asOfDate, updatedDate } = window.SITREP;
 
-    // ── Colour palette ─────────────────────────────────────────────────────────
+    // ââ Colour palette âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
     const C = {
       bg:"#f5f0e8", cardBg:"#ffffff", border:"#d4c9b8", tableHdr:"#e2d9c8",
       rowAlt:"#f0ebe1", crimson:"#8B1A1A", brightCrimson:"#C41230",
@@ -57,7 +57,7 @@
     };
     const TD = { padding:"9px 13px", borderBottom:"1px solid #e8e0d0", verticalAlign:"middle" };
 
-    // ── Computed chart data ───────────────────────────────────────────────────
+    // ââ Computed chart data âââââââââââââââââââââââââââââââââââââââââââââââââââ
     const CONFIRMED = UAE.filter(r => !r.pending);
     const CHART = CONFIRMED.map((r, i) => {
       const k = KSA[i] || {}; const q = QAT[i] || {};
@@ -88,12 +88,12 @@
       total: T.uae.total+T.ksa.total+T.qat.total,
     };
 
-    // ── Sub-components ────────────────────────────────────────────────────────
+    // ââ Sub-components ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
     function Delta({ v }) {
       if (v === null || v === undefined) return null;
-      if (v === 0) return <span style={{color:C.gray,fontSize:10,marginLeft:4,fontFamily:"sans-serif"}}>● 0</span>;
+      if (v === 0) return <span style={{color:C.gray,fontSize:10,marginLeft:4,fontFamily:"sans-serif"}}>â 0</span>;
       const up = v > 0;
-      return <span style={{color:up?C.green:C.red,fontSize:10,marginLeft:4,fontFamily:"sans-serif"}}>{up?"▲":"▼"}{Math.abs(v)}</span>;
+      return <span style={{color:up?C.green:C.red,fontSize:10,marginLeft:4,fontFamily:"sans-serif"}}>{up?"â²":"â¼"}{Math.abs(v)}</span>;
     }
 
     function StatCard({ value, label, sub, color }) {
@@ -135,7 +135,7 @@
             <span style={{fontSize:18}}>{flagEmoji}</span>
             <span>{label}</span>
             <span style={{fontSize:8,background:"rgba(255,255,255,0.25)",padding:"2px 6px",borderRadius:2,letterSpacing:"0.1em"}}>
-              {showEstBadge ? "ESTIMATED — OPEN SOURCE" : "CONFIRMED — UAE MOD / LWJ"}
+              {showEstBadge ? "ESTIMATED â OPEN SOURCE" : "CONFIRMED â UAE MOD / LWJ"}
             </span>
           </div>
           <div style={{border:`1px solid ${C.border}`,borderTop:"none",borderRadius:"0 0 4px 4px",overflow:"hidden"}}>
@@ -159,26 +159,26 @@
                       {!r.pending && showEstBadge && <EstBadge />}
                     </td>
                     <td style={{...TD,textAlign:"right"}}>
-                      {r.pending ? <span style={{color:C.gray}}>—</span>
+                      {r.pending ? <span style={{color:C.gray}}>â</span>
                         : <><span style={{fontWeight:500,color:r.bm===0?C.gray:"inherit"}}>{r.bm}</span><Delta v={r.bmD}/></>}
                     </td>
                     <td style={{...TD,textAlign:"right"}}>
-                      {r.pending ? <span style={{color:C.gray}}>—</span>
+                      {r.pending ? <span style={{color:C.gray}}>â</span>
                         : <><span style={{fontWeight:500,color:r.cm===0?C.gray:"inherit"}}>{r.cm}</span><Delta v={r.cmD}/></>}
                     </td>
                     <td style={{...TD,textAlign:"right"}}>
-                      {r.pending ? <span style={{color:C.gray}}>—</span>
+                      {r.pending ? <span style={{color:C.gray}}>â</span>
                         : <><span style={{fontWeight:500,color:r.uav===0?C.gray:"inherit"}}>{r.uav}</span><Delta v={r.uavD}/></>}
                     </td>
                     <td style={{...TD,textAlign:"right",background:i%2===0?"#f7f2e8":"#ede7d6"}}>
-                      {r.pending ? <span style={{color:C.gray}}>—</span>
+                      {r.pending ? <span style={{color:C.gray}}>â</span>
                         : <><span style={{fontWeight:"bold",fontSize:14}}>{r.total}</span><Delta v={r.totD}/></>}
                     </td>
                   </tr>
                 ))}
                 <tr style={{background:"#dbd2c0",borderTop:`2px solid ${C.border}`}}>
                   <td style={{...TD,fontWeight:"bold",fontSize:10,letterSpacing:"0.1em",fontFamily:"sans-serif",color:C.sub}}>
-                    PERIOD TOTAL <span style={{fontWeight:"normal",color:C.gray}}>D+0–D+{rows.length-1}</span>
+                    PERIOD TOTAL <span style={{fontWeight:"normal",color:C.gray}}>D+0âD+{rows.length-1}</span>
                   </td>
                   <td style={{...TD,textAlign:"right",fontWeight:"bold",color:C.navy,fontSize:15}}>{totals.bm}</td>
                   <td style={{...TD,textAlign:"right",fontWeight:"bold",color:C.olive,fontSize:15}}>{totals.cm}</td>
@@ -215,7 +215,7 @@
       );
     }
 
-    // ── Main dashboard ────────────────────────────────────────────────────────
+    // ââ Main dashboard ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
     function SituationReport() {
       return (
         <div style={{background:C.bg,minHeight:"100vh",fontFamily:"Georgia,serif",color:C.text,padding:"32px 24px"}}>
@@ -226,7 +226,7 @@
               <div>
                 <h1 style={{margin:0,fontSize:34,fontWeight:"bold",letterSpacing:"-0.01em"}}>Situation Report</h1>
                 <div style={{fontSize:13,color:C.sub,fontStyle:"italic",marginTop:5}}>
-                  Iranian Projectile Launches — Gulf Theater (UAE · KSA · Qatar) — Daily Count
+                  Iranian Projectile Launches â Gulf Theater (UAE Â· KSA Â· Qatar) â Daily Count
                 </div>
               </div>
               <div style={{textAlign:"right"}}>
@@ -241,29 +241,29 @@
 
             {/* SOURCES */}
             <div style={{fontSize:10,color:C.sub,letterSpacing:"0.05em",marginBottom:10,fontFamily:"sans-serif"}}>
-              SOURCE: UAE MOD (@modgovae) · Qatar MOD (@modqatar) · Saudi Arabia MOD (MoD_Saudi) · Long War Journal · The National · Gulf News · CENTCOM (@CENTCOM)
+              SOURCE: UAE MOD (@modgovae) Â· Qatar MOD (@modqatar) Â· Saudi Arabia MOD (MoD_Saudi) Â· Long War Journal Â· The National Â· Gulf News Â· CENTCOM (@CENTCOM)
             </div>
             <div style={{fontSize:10,color:C.amber,letterSpacing:"0.04em",marginBottom:26,fontFamily:"sans-serif",fontStyle:"italic"}}>
-              ⚠ KSA and Qatar figures are open-source estimates. UAE figures are confirmed. All data unclassified.
+              â  KSA and Qatar figures are open-source estimates. UAE figures are confirmed. All data unclassified.
             </div>
 
             {/* STAT CARDS */}
             <div style={{fontSize:10,fontWeight:"bold",letterSpacing:"0.12em",color:C.sub,textTransform:"uppercase",fontFamily:"sans-serif",marginBottom:10}}>
-              Gulf Theater — Combined Period Totals
+              Gulf Theater â Combined Period Totals
             </div>
             <div style={{display:"flex",gap:14,marginBottom:8,flexWrap:"wrap"}}>
               <StatCard value={GRAND.bm}    label="Ballistic Missiles" sub="UAE confirmed + KSA/Qatar est." color={C.navy} />
               <StatCard value={GRAND.cm}    label="Cruise Missiles"    sub="UAE 15 confirmed + Qatar 2 est."     color={C.olive} />
-              <StatCard value={GRAND.uav}   label="Drones / UAVs"      sub="UAE · KSA · Qatar combined"    color={C.crimson} />
+              <StatCard value={GRAND.uav}   label="Drones / UAVs"      sub="UAE Â· KSA Â· Qatar combined"    color={C.crimson} />
               <StatCard value={GRAND.total} label="Gulf Total"          sub="confirmed + estimated"          color={C.brightCrimson} />
             </div>
 
             {/* Theater mini-bar */}
             <div style={{display:"flex",gap:8,marginBottom:34,flexWrap:"wrap"}}>
               {[
-                {flag:"🇦🇪",label:"UAE",  val:T.uae.total,color:C.navy,   note:"confirmed"},
-                {flag:"🇸🇦",label:"KSA",  val:T.ksa.total,color:"#1a6b3c",note:"estimated"},
-                {flag:"🇶🇦",label:"Qatar",val:T.qat.total,color:C.teal,   note:"estimated"},
+                {flag:"ð¦ðª",label:"UAE",  val:T.uae.total,color:C.navy,   note:"confirmed"},
+                {flag:"ð¸ð¦",label:"KSA",  val:T.ksa.total,color:"#1a6b3c",note:"estimated"},
+                {flag:"ð¶ð¦",label:"Qatar",val:T.qat.total,color:C.teal,   note:"estimated"},
               ].map(c => (
                 <div key={c.label} style={{background:C.cardBg,border:`1px solid ${C.border}`,borderRadius:4,padding:"10px 18px",display:"flex",alignItems:"center",gap:10}}>
                   <span style={{fontSize:20}}>{c.flag}</span>
@@ -277,23 +277,23 @@
             </div>
 
             {/* TABLES */}
-            <SectionLabel>Daily Launch Tables by Theater — 28 Feb – Present</SectionLabel>
+            <SectionLabel>Daily Launch Tables by Theater â 28 Feb â Present</SectionLabel>
 
-            <CountryTable rows={UAE} label="UNITED ARAB EMIRATES THEATER" flagEmoji="🇦🇪"
+            <CountryTable rows={UAE} label="UNITED ARAB EMIRATES THEATER" flagEmoji="ð¦ðª"
               accentColor={C.navy} showEstBadge={false} totals={T.uae}
-              footnote="BM daily series confirmed by LWJ citing UAE MOD directly. CM attribution: Feb 28 (2) + Mar 2 (6) + Mar 11 (7) per UAE MOD statement sequencing; all 15 confirmed intercepted. Drone counts differenced from UAE MOD cumulative snapshots. Fujairah drone penetration on D+16 (16 Mar) confirmed — not yet reflected in UAE MOD cumulative." />
+              footnote="BM daily series confirmed by LWJ citing UAE MOD directly. CM attribution: Feb 28 (2) + Mar 2 (6) + Mar 11 (7) per UAE MOD statement sequencing; all 15 confirmed intercepted. Drone counts differenced from UAE MOD cumulative snapshots. UAE MoD confirmed 6 BM and 21 drones engaged on D+16 (16 Mar); Fujairah drone penetration on D+16 confirmed â DXB fuel-tank strike and Umm Al Quwain building fire also reported." />
 
-            <CountryTable rows={KSA} label="KINGDOM OF SAUDI ARABIA THEATER" flagEmoji="🇸🇦"
+            <CountryTable rows={KSA} label="KINGDOM OF SAUDI ARABIA THEATER" flagEmoji="ð¸ð¦"
               accentColor="#1a6b3c" showEstBadge={true} totals={T.ksa}
-              footnote="EST. Saudi MOD confirmed BM intercepts at KKMC (D+0) and Tabuk Air Base (D+0–D+1). KSA MoD confirmed 6 BM intercepted at al-Kharj (D+14), ~10 drones over Riyadh + 3–4 Eastern Region intercepted D+15. First confirmed BM-associated KSA casualties (3 WIA, al-Kharj, D+14). No CMs reported toward KSA." />
+              footnote="EST. Saudi MOD confirmed BM intercepts at KKMC (D+0) and Tabuk Air Base (D+0âD+1). KSA MoD confirmed 6 BM intercepted at al-Kharj (D+14), ~10 drones over Riyadh + 3â4 Eastern Region intercepted D+15. Saudi MoD reported ~60 drones intercepted over Riyadh Region and Eastern Province on D+16 â highest single-period KSA intercept figure recorded; Shaybah oilfield targeted. First confirmed BM-associated KSA casualties (3 WIA, al-Kharj, D+14). No CMs reported toward KSA." />
 
-            <CountryTable rows={QAT} label="QATAR THEATER — AL UDEID AB" flagEmoji="🇶🇦"
+            <CountryTable rows={QAT} label="QATAR THEATER â AL UDEID AB" flagEmoji="ð¶ð¦"
               accentColor={C.teal} showEstBadge={true} totals={T.qat}
-              footnote="EST. Open sources indicate 152 BMs toward Qatar (period total D+0–D+15). Daily BM series modelled on IRGC salvo doctrine: heavy D+0 opening (48) against Al Udeid AB / AFCENT HQ, exponential decay with D+9 resurgence (17). Qatar MOD confirmed multiple intercept events. 2 CMs reported toward Qatar (D+12, D+13). First civilian evacuation orders issued 14 Mar." />
+              footnote="EST. Open sources indicate 152 BMs toward Qatar (period total D+0âD+15). Daily BM series modelled on IRGC salvo doctrine: heavy D+0 opening (48) against Al Udeid AB / AFCENT HQ, exponential decay with D+9 resurgence (17). Qatar MOD confirmed multiple intercept events. 2 CMs reported toward Qatar (D+12, D+13). First civilian evacuation orders issued 14 Mar." />
 
             {/* CHART */}
             <div style={{marginBottom:36}}>
-              <SectionLabel>Daily Launch Volume — Gulf Theater Combined</SectionLabel>
+              <SectionLabel>Daily Launch Volume â Gulf Theater Combined</SectionLabel>
               <div style={{fontSize:11,color:C.sub,fontFamily:"sans-serif",marginBottom:10}}>
                 Solid line = Gulf Total. Dashed lines = category breakdown across all three theaters.
               </div>
@@ -316,7 +316,7 @@
                 </ResponsiveContainer>
               </div>
               <div style={{fontSize:10,color:C.gray,marginTop:8,lineHeight:1.6,fontFamily:"sans-serif",fontStyle:"italic"}}>
-                Fig. 1 — D+0 peak of 472 reflects simultaneous BM salvoes against UAE, KSA, and Qatar (Al Udeid AB). KSA and Qatar series are open-source estimates. Pending days not plotted.
+                Fig. 1 â D+0 peak of 472 reflects simultaneous BM salvoes against UAE, KSA, and Qatar (Al Udeid AB). KSA and Qatar series are open-source estimates. Qatar D+16 not yet available (no official Qatar MOD release). Pending days not plotted.
               </div>
             </div>
 
@@ -324,31 +324,31 @@
             <div style={{marginBottom:36}}>
               <SectionLabel>Assessment by Category</SectionLabel>
               <div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:14}}>
-                <AssessCard color={C.navy} title="Ballistic Missiles — Rapid Degradation"
-                  body="The BM series opened at 207 combined launches on D+0 (UAE 137, KSA est. 22, Qatar est. 48) — the largest single-day Iranian BM salvo on record. By D+4 the series had collapsed 98% in UAE, to zero in KSA, and to 5/day in Qatar. Qatar's BM volume (152 est.) confirms Al Udeid AB / AFCENT HQ as a sustained IRGC aim point. UAE BM ranged 6–10/day through D+11–D+14 before dropping to 4 on D+15. KSA MoD confirmed 6 BM intercepted at al-Kharj on D+14 — first confirmed BM-associated KSA casualties (3 WIA). KSA BM reached zero by D+15. CENTCOM assessed BM launch rates approximately 90% below peak as of D+5. Intercept systems: THAAD (UAE/Qatar), Patriot PAC-3 (UAE/KSA/Qatar), Arrow-3 (KSA, first combat use). Israel reported critically low on BM interceptors to Washington on D+15 (Semafor) — emerging coalition-wide interceptor depletion risk." />
-                <AssessCard color={C.olive} title="Cruise Missiles — 17 Total (15 UAE + 2 Qatar)"
-                  body="15 Ya Ali/Paveh CMs confirmed against UAE through D+15 (2 on D+0, 6 on D+2, 7 on D+11). The D+11 salvo marked a significant resumption after an 8-day pause, likely reflecting forward-deployed inventory committed to the UAE axis. All 15 intercepted per UAE MOD. 2 CMs reported toward Qatar (D+12, D+13) — first confirmed CM use on the Qatar axis, coinciding with Qatar's first civilian evacuation orders (D+14). No CMs reported toward KSA. Total CM inventory expenditure remains low relative to BM/UAV, consistent with Iran reserving precision stocks for high-value targets." />
+                <AssessCard color={C.navy} title="Ballistic Missiles â Rapid Degradation"
+                  body="The BM series opened at 207 combined launches on D+0 (UAE 137, KSA est. 22, Qatar est. 48) â the largest single-day Iranian BM salvo on record. By D+4 the series had collapsed 98% in UAE, to zero in KSA, and to 5/day in Qatar. Qatar's BM volume (152 est.) confirms Al Udeid AB / AFCENT HQ as a sustained IRGC aim point. UAE MoD confirmed 6 BM engaged on D+16 (all destroyed), maintaining the 4â10/day range since D+11. KSA recorded zero BM on D+15âD+16. KSA MoD confirmed 6 BM intercepted at al-Kharj on D+14 â first confirmed BM-associated KSA casualties (3 WIA). CENTCOM assessed BM launch rates approximately 90% below peak as of D+5. Intercept systems: THAAD (UAE/Qatar), Patriot PAC-3 (UAE/KSA/Qatar), Arrow-3 (KSA, first combat use). Israel reported critically low on BM interceptors to Washington on D+15 (Semafor) â emerging coalition-wide interceptor depletion risk." />
+                <AssessCard color={C.olive} title="Cruise Missiles â 17 Total (15 UAE + 2 Qatar)"
+                  body="15 Ya Ali/Paveh CMs confirmed against UAE through D+15 (2 on D+0, 6 on D+2, 7 on D+11). The D+11 salvo marked a significant resumption after an 8-day pause, likely reflecting forward-deployed inventory committed to the UAE axis. All 15 intercepted per UAE MOD. 2 CMs reported toward Qatar (D+12, D+13) â first confirmed CM use on the Qatar axis, coinciding with Qatar's first civilian evacuation orders (D+14). No CMs reported toward KSA. Total CM inventory expenditure remains low relative to BM/UAV, consistent with Iran reserving precision stocks for high-value targets." />
               </div>
               <div style={{display:"flex",gap:14,flexWrap:"wrap"}}>
-                <AssessCard color={C.crimson} title="Drones / UAVs — Sustained Gulf-Wide Saturation"
-                  body="Shahed-136/238-type UAVs dominate volume across all three theaters: UAE (1,606), KSA est. (371), Qatar est. (85) — combined 2,062. After a D+1 surge to ~398, counts stabilised in a 120–167/day plateau from D+3 through D+8. D+9–D+10 broke the plateau (~67 and ~53 combined). D+11 saw a UAE UAV rebound to 39 alongside the CM salvo. D+12–D+14 featured a KSA UAV surge peaking at 65/day (D+14) — the highest single-day KSA count — likely reflecting redirected inventory as UAE/Qatar stocks depleted. D+15 collapsed to ~34 combined (93% below D+0 peak). On D+16, a drone penetrated or bypassed UAE air defences and struck Fujairah's major oil bunkering hub — triggering a large fire and suspension of oil loading operations — the second Fujairah strike in 48 hours. CENTCOM assessed drone rates approximately 83% below peak as of D+5." />
-                <AssessCard color={C.brightCrimson} title="Targets and Effects — All Three Theaters"
-                  body="UAE: Al Dhafra AB (IRGC 10-missile + drone package D+14–15, citing 'intelligence support role'), Fujairah oil bunkering hub (two strikes in 48 hrs, D+14 and D+16 — second confirmed penetration), IRGC explicitly designated Jebel Ali, Khalifa, and Fujairah ports as targets; ADNOC Ruwais refinery (922,000 bpd) shutdown from D+10; Dubai International (fuel depot fire). KSA: Prince Sultan AB/al-Kharj (6 BM D+14, 3 WIA — first confirmed KSA BM casualties), ~10 drones over Riyadh + 3–4 Eastern Region D+15. Qatar: Al Udeid AB (AFCENT HQ) — 152 est. BMs plus UAV attacks; first civilian evacuation orders D+14; QatarEnergy force majeure on all LNG since D+4. Civilian toll: UAE 6 KIA / 142 WIA; KSA 2 KIA / 12 WIA; Qatar 0 KIA / 16 WIA." />
+                <AssessCard color={C.crimson} title="Drones / UAVs â Sustained Gulf-Wide Saturation"
+                  body="Shahed-136/238-type UAVs dominate volume across all three theaters: UAE (1,627), KSA est. (431), Qatar est. (85) â combined 2,143. After a D+1 surge to ~398, counts stabilised in a 120â167/day plateau from D+3 through D+8. D+9âD+10 broke the plateau (~67 and ~53 combined). D+11 saw a UAE UAV rebound to 39 alongside the CM salvo. D+12âD+14 featured a KSA UAV surge peaking at 65/day (D+14) â the highest single-day KSA count. D+15 collapsed to ~34 combined (93% below D+0 peak). D+16 saw a dramatic KSA reversal: Saudi MoD reported ~60 drones intercepted over the Riyadh Region and Eastern Province â the highest single-period KSA intercept figure recorded â confirming KSA energy infrastructure (Shaybah oilfield) as an expanding primary Iranian target. UAE MoD confirmed 21 drones on D+16 with a Fujairah penetration, DXB fuel-tank strike, and Umm Al Quwain building fire. CENTCOM assessed drone rates approximately 83% below peak as of D+5." />
+                <AssessCard color={C.brightCrimson} title="Targets and Effects â All Three Theaters"
+                  body="UAE: Al Dhafra AB (IRGC 10-missile + drone package D+14â15, citing 'intelligence support role'), Fujairah oil bunkering hub (third fire incident D+16, contained), DXB fuel-tank strike D+16 (flights suspended then resumed), Umm Al Quwain building fire D+16, 1 KIA Abu Dhabi Al Bahyan (missile impact on civilian vehicle, D+16); IRGC explicitly designated Jebel Ali, Khalifa, and Fujairah ports as targets; ADNOC Ruwais refinery (922,000 bpd) shutdown from D+10. KSA: Prince Sultan AB/al-Kharj (6 BM D+14, 3 WIA â first confirmed KSA BM casualties), ~60 drones over Riyadh Region and Eastern Province D+16 (highest single-period KSA intercept), Shaybah oilfield targeted. Qatar: Al Udeid AB (AFCENT HQ) â 152 est. BMs plus UAV attacks; first civilian evacuation orders D+14; QatarEnergy force majeure on all LNG since D+4. Civilian toll: UAE 8 KIA / 145+ WIA; KSA 2 KIA / 12 WIA; Qatar 0 KIA / 16 WIA." />
               </div>
             </div>
 
             {/* TRAJECTORY ANALYSIS */}
             <div style={{marginBottom:36}}>
-              <SectionLabel>Trajectory Analysis — Gulf Theater Combined</SectionLabel>
+              <SectionLabel>Trajectory Analysis â Gulf Theater Combined</SectionLabel>
               <div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:14}}>
                 <div style={{flex:1,minWidth:280,background:C.cardBg,border:`1px solid ${C.border}`,borderRadius:4,padding:"20px 24px"}}>
                   <div style={{fontSize:10,fontWeight:"bold",letterSpacing:"0.1em",color:C.gray,textTransform:"uppercase",marginBottom:14,paddingBottom:10,borderBottom:`1px solid ${C.border}`,fontFamily:"sans-serif"}}>
-                    Phase I — Surge &amp; Collapse (D+0 → D+2)
+                    Phase I â Surge &amp; Collapse (D+0 â D+2)
                   </div>
                   <div style={{display:"flex",gap:12,justifyContent:"space-around",marginBottom:14}}>
                     <MetricBox value="-139.5"   label="projectiles/day (combined slope)" />
-                    <MetricBox value="−59%"     label="gulf total drop in 48 hrs" />
-                    <MetricBox value="1.6 days" label="exp. half-life (λ = 0.45)" />
+                    <MetricBox value="â59%"     label="gulf total drop in 48 hrs" />
+                    <MetricBox value="1.6 days" label="exp. half-life (Î» = 0.45)" />
                   </div>
                   <p style={{fontSize:12,lineHeight:1.65,color:C.sub,margin:0}}>
                     D+0 peaked at 472 combined launches. The steep Phase I slope reflects Qatar's heavy D+0 BM contribution (48) and its rapid collapse by D+2, consistent with coalition suppression of IRGC TEL positions on the Qatar axis.
@@ -356,36 +356,36 @@
                 </div>
                 <div style={{flex:1,minWidth:280,background:C.cardBg,border:`1px solid ${C.border}`,borderRadius:4,padding:"20px 24px"}}>
                   <div style={{fontSize:10,fontWeight:"bold",letterSpacing:"0.1em",color:C.gray,textTransform:"uppercase",marginBottom:14,paddingBottom:10,borderBottom:`1px solid ${C.border}`,fontFamily:"sans-serif"}}>
-                    Phase II — Attrition Plateau (D+2 → D+6)
+                    Phase II â Attrition Plateau (D+2 â D+6)
                   </div>
                   <div style={{display:"flex",gap:12,justifyContent:"space-around",marginBottom:14}}>
                     <MetricBox value="-11.7"    label="projectiles/day (combined slope)" />
-                    <MetricBox value="162 ±18"  label="daily mean ± std dev" />
+                    <MetricBox value="162 Â±18"  label="daily mean Â± std dev" />
                     <MetricBox value="~D+18"    label="to-zero projection*" />
                   </div>
                   <p style={{fontSize:12,lineHeight:1.65,color:C.sub,margin:0}}>
-                    Plateau sustained primarily by UAE drone volume through D+8 (mean ~155/day combined). Qatar BM series tapers D+2–D+8 (12 → 8 → 5 → 4 → 2 → 1), with a D+9 resurgence to 17 indicating partial TEL reconstitution. KSA enters near-zero by D+4. D+9–D+10 (~67 and ~53 combined) mark the initial plateau break. D+11–D+14 saw episodic surges — UAE 7 CMs (D+11), KSA 65 UAVs (D+14) — with no sustained recovery. D+15 dropped to ~34 combined. Despite volume collapse, D+16 Fujairah drone penetration demonstrates residual precision strike capacity persists even at terminal inventory levels. Iran's targeting logic has shifted from predominantly US military bases toward energy and port infrastructure — an economic coercion strategy accelerated by the US Kharg Island strike on D+14.
+                    Plateau sustained primarily by UAE drone volume through D+8 (mean ~155/day combined). Qatar BM series tapers D+2âD+8 (12 â 8 â 5 â 4 â 2 â 1), with a D+9 resurgence to 17 indicating partial TEL reconstitution. KSA enters near-zero by D+4. D+9âD+10 (~67 and ~53 combined) mark the initial plateau break. D+11âD+14 saw episodic surges â UAE 7 CMs (D+11), KSA 65 UAVs (D+14). D+15 dropped to ~34 combined. D+16 reversed the declining trend with a combined UAE+KSA total of 87 (27 UAE + 60 KSA) â the highest combined total since D+9. The KSA ~60-drone salvo (Saudi MoD) targeting the Eastern Province and Shaybah oilfield represents the highest single-period Saudi intercept on record, confirming KSA energy infrastructure as an expanding primary target. Iran's targeting logic has shifted from predominantly US military bases toward energy and port infrastructure â an economic coercion strategy accelerated by the US Kharg Island strike on D+14.
                   </p>
                 </div>
               </div>
               <div style={{background:C.cardBg,border:`1px solid ${C.border}`,borderRadius:4,padding:"16px 20px",marginBottom:10}}>
                 <div style={{fontSize:10,fontWeight:"bold",letterSpacing:"0.1em",color:C.amber,textTransform:"uppercase",marginBottom:10,fontFamily:"sans-serif"}}>
-                  Phase III — Projected Outlook (D+7 Onward)
+                  Phase III â Projected Outlook (D+7 Onward)
                 </div>
                 <p style={{fontSize:13,lineHeight:1.65,color:C.text,margin:0}}>
-                  Three scenarios: <strong>(A) Continued Attrition Plateau</strong> (~5%) — ruled out by D+9–D+15 sustained multi-axis depletion; residual probability covers sporadic harassment only. <strong>(B) Secondary Spike / Precision Targeting Shift</strong> (~35%) — D+16 Fujairah penetration, D+14–15 IRGC 10-missile hypersonic package against Al Dhafra, and explicit port targeting declarations confirm Iran retains episodic precision strike capacity despite volume collapse; targeting has shifted to economic coercion (energy/port infrastructure) accelerated by US Kharg Island strike; Israel's reported interceptor shortage (Semafor, D+15) introduces coalition-wide air defence degradation risk within days to weeks. <strong>(C) Rapid De-escalation</strong> (~60%) — D+15 combined at ~34 (93% below D+0 peak; ~78% below plateau mean) reflects near-terminal inventory across all axes; however, no credible off-ramp visible — new Supreme Leader Mojtaba Khamenei conditioned halt on closure of all US bases in region; Hormuz remains closed. Cessation of mass salvoes likely within 48–72 hours; residual precision strikes (Fujairah-type) may persist beyond inventory depletion of mass-attack platforms.
+                  Three scenarios: <strong>(A) Continued Attrition Plateau</strong> (~5%) â partially revived by D+16 KSA surge (~60 drones); residual probability now covers sporadic mass harassment alongside precision strikes. <strong>(B) Secondary Spike / Precision Targeting Shift</strong> (~45%) â D+16 represents a clear secondary spike: KSA ~60 drones (highest single-period), UAE 6 BM + 21 drones with Fujairah penetration, DXB fuel-tank strike, and Al Bahyan civilian KIA; combined D+16 total of 87 (UAE+KSA) is the highest since D+9; IRGC spokesperson claims intact stockpile (Low confidence) but D+16 volumes partially corroborate residual capacity; targeting firmly shifted to energy/port infrastructure. <strong>(C) Rapid De-escalation</strong> (~50%) â despite D+16 spike, overall trajectory remains below D+0âD+8 levels; however, no credible off-ramp visible â new Supreme Leader Mojtaba Khamenei conditioned halt on closure of all US bases in region; Iranian FM stated 'never asked for a ceasefire' on D+16; Hormuz remains closed; Israeli ground operations in Lebanon commenced D+16â17, likely sustaining or increasing Iranian retaliatory tempo.
                 </p>
               </div>
               <div style={{fontSize:10,color:C.gray,fontFamily:"sans-serif",fontStyle:"italic",lineHeight:1.6}}>
-                * Phase I/II projections based on D+2–D+8 trend data. D+9–D+15 sustained depletion incorporated; D+11 CM resumption, D+14 KSA UAV surge, and D+16 Fujairah drone penetration treated as episodic precision actions within terminal mass-inventory trend. Targeting shift to economic infrastructure post-D+14 Kharg Island strike assessed as new escalatory driver. Phase III revised as of D+16. Analytical judgements only; not classified assessments.
+                * Phase I/II projections based on D+2âD+8 trend data. D+9âD+16 data incorporated; D+16 secondary spike (87 combined UAE+KSA) partially reverses D+15 depletion trajectory. KSA ~60-drone D+16 salvo is the highest single-period Saudi intercept recorded. Targeting shift to economic infrastructure post-D+14 Kharg Island strike confirmed by D+16 Shaybah/Fujairah/DXB targeting. Phase III revised as of D+16. Analytical judgements only; not classified assessments.
               </div>
             </div>
 
             {/* FOOTER */}
             <hr style={{border:"none",borderTop:`1px solid ${C.border}`,margin:"8px 0 12px"}} />
             <div style={{display:"flex",justifyContent:"space-between",fontSize:10,color:C.gray,fontFamily:"sans-serif",flexWrap:"wrap",gap:6}}>
-              <span>UNCLASSIFIED // FOR INFORMATIONAL PURPOSES ONLY — Open-source data only</span>
-              <span>Updated {updatedDate} | Gulf Theater SITREP · UAE confirmed · KSA/Qatar estimated</span>
+              <span>UNCLASSIFIED // FOR INFORMATIONAL PURPOSES ONLY â Open-source data only</span>
+              <span>Updated {updatedDate} | Gulf Theater SITREP Â· UAE confirmed Â· KSA/Qatar estimated</span>
             </div>
 
           </div>
@@ -393,7 +393,7 @@
       );
     }
 
-    // ── Mount ─────────────────────────────────────────────────────────────────
+    // ââ Mount âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(<SituationReport />);
   </script>
