@@ -5,8 +5,8 @@
 
 
 window.SITREP = {
-  asOfDate:    "15 MAR 2026",
-  updatedDate: "15 Mar 2026",
+  asOfDate:    "16 MAR 2026",
+  updatedDate: "16 Mar 2026",
 
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
