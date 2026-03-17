@@ -178,7 +178,7 @@
                 ))}
                 <tr style={{background:"#dbd2c0",borderTop:`2px solid ${C.border}`}}>
                   <td style={{...TD,fontWeight:"bold",fontSize:10,letterSpacing:"0.1em",fontFamily:"sans-serif",color:C.sub}}>
-                    PERIOD TOTAL <span style={{fontWeight:"normal",color:C.gray}}>D+0–D+6</span>
+                    PERIOD TOTAL <span style={{fontWeight:"normal",color:C.gray}}>D+0–D+{rows.length-1}</span>
                   </td>
                   <td style={{...TD,textAlign:"right",fontWeight:"bold",color:C.navy,fontSize:15}}>{totals.bm}</td>
                   <td style={{...TD,textAlign:"right",fontWeight:"bold",color:C.olive,fontSize:15}}>{totals.cm}</td>
@@ -253,7 +253,7 @@
             </div>
             <div style={{display:"flex",gap:14,marginBottom:8,flexWrap:"wrap"}}>
               <StatCard value={GRAND.bm}    label="Ballistic Missiles" sub="UAE confirmed + KSA/Qatar est." color={C.navy} />
-              <StatCard value={GRAND.cm}    label="Cruise Missiles"    sub="UAE only — all intercepted"     color={C.olive} />
+              <StatCard value={GRAND.cm}    label="Cruise Missiles"    sub="UAE 15 confirmed + Qatar 2 est."     color={C.olive} />
               <StatCard value={GRAND.uav}   label="Drones / UAVs"      sub="UAE · KSA · Qatar combined"    color={C.crimson} />
               <StatCard value={GRAND.total} label="Gulf Total"          sub="confirmed + estimated"          color={C.brightCrimson} />
             </div>
@@ -281,15 +281,15 @@
 
             <CountryTable rows={UAE} label="UNITED ARAB EMIRATES THEATER" flagEmoji="🇦🇪"
               accentColor={C.navy} showEstBadge={false} totals={T.uae}
-              footnote="BM daily series confirmed by LWJ citing UAE MOD directly. CM attribution: Feb 28 (2) + Mar 2 (6) per UAE MOD statement sequencing; all 8 confirmed intercepted. Drone counts differenced from UAE MOD cumulative snapshots." />
+              footnote="BM daily series confirmed by LWJ citing UAE MOD directly. CM attribution: Feb 28 (2) + Mar 2 (6) + Mar 11 (7) per UAE MOD statement sequencing; all 15 confirmed intercepted. Drone counts differenced from UAE MOD cumulative snapshots. Fujairah drone penetration on D+16 (16 Mar) confirmed — not yet reflected in UAE MOD cumulative." />
 
             <CountryTable rows={KSA} label="KINGDOM OF SAUDI ARABIA THEATER" flagEmoji="🇸🇦"
               accentColor="#1a6b3c" showEstBadge={true} totals={T.ksa}
-              footnote="EST. Saudi MOD confirmed BM intercepts at KKMC (D+0) and Tabuk Air Base (D+0–D+1). CENTCOM SITREP cited cumulative KSA intercept count from which drone estimates are proportioned. No CMs reported toward KSA." />
+              footnote="EST. Saudi MOD confirmed BM intercepts at KKMC (D+0) and Tabuk Air Base (D+0–D+1). KSA MoD confirmed 6 BM intercepted at al-Kharj (D+14), ~10 drones over Riyadh + 3–4 Eastern Region intercepted D+15. First confirmed BM-associated KSA casualties (3 WIA, al-Kharj, D+14). No CMs reported toward KSA." />
 
             <CountryTable rows={QAT} label="QATAR THEATER — AL UDEID AB" flagEmoji="🇶🇦"
               accentColor={C.teal} showEstBadge={true} totals={T.qat}
-              footnote="EST. Open sources indicate 101 BMs toward Qatar (period total). Daily BM series modelled on IRGC salvo doctrine: heavy D+0 opening (48) against Al Udeid AB / AFCENT HQ, exponential decay thereafter. Qatar MOD confirmed multiple intercept events. No CMs reported toward Qatar." />
+              footnote="EST. Open sources indicate 152 BMs toward Qatar (period total D+0–D+15). Daily BM series modelled on IRGC salvo doctrine: heavy D+0 opening (48) against Al Udeid AB / AFCENT HQ, exponential decay with D+9 resurgence (17). Qatar MOD confirmed multiple intercept events. 2 CMs reported toward Qatar (D+12, D+13). First civilian evacuation orders issued 14 Mar." />
 
             {/* CHART */}
             <div style={{marginBottom:36}}>
@@ -325,15 +325,15 @@
               <SectionLabel>Assessment by Category</SectionLabel>
               <div style={{display:"flex",gap:14,flexWrap:"wrap",marginBottom:14}}>
                 <AssessCard color={C.navy} title="Ballistic Missiles — Rapid Degradation"
-                  body="The BM series opened at 207 combined launches on D+0 (UAE 137, KSA est. 22, Qatar est. 48) — the largest single-day Iranian BM salvo on record. By D+4 the series had collapsed 98% in UAE, to zero in KSA, and to 5/day in Qatar. Qatar's BM volume (152 est.) confirms Al Udeid AB / AFCENT HQ as a sustained IRGC aim point. UAE BM ranged 6–10/day through D+11–D+14 before dropping to 4 on D+15. KSA BM peaked at 7 (D+10–D+11) before reaching zero by D+15. D+11 introduced 7 confirmed cruise missiles — first CM use since D+2 — indicating a brief reconfiguration of UAE-axis strike packages. Intercept systems: THAAD (UAE/Qatar), Patriot PAC-3 (UAE/KSA/Qatar), Arrow-3 (KSA, first combat use)." />
-                <AssessCard color={C.olive} title="Cruise Missiles — UAE-Only, 15 Confirmed"
-                  body="15 Ya Ali/Paveh CMs confirmed against UAE through D+15 (2 on D+0, 6 on D+2, 7 on D+11). The D+11 salvo marked a significant resumption after an 8-day pause, likely reflecting forward-deployed inventory committed to the UAE axis. All 15 intercepted per UAE MOD. No CMs corroborated toward KSA or Qatar, consistent with Iran reserving CM stocks for UAE high-value targets." />
+                  body="The BM series opened at 207 combined launches on D+0 (UAE 137, KSA est. 22, Qatar est. 48) — the largest single-day Iranian BM salvo on record. By D+4 the series had collapsed 98% in UAE, to zero in KSA, and to 5/day in Qatar. Qatar's BM volume (152 est.) confirms Al Udeid AB / AFCENT HQ as a sustained IRGC aim point. UAE BM ranged 6–10/day through D+11–D+14 before dropping to 4 on D+15. KSA MoD confirmed 6 BM intercepted at al-Kharj on D+14 — first confirmed BM-associated KSA casualties (3 WIA). KSA BM reached zero by D+15. CENTCOM assessed BM launch rates approximately 90% below peak as of D+5. Intercept systems: THAAD (UAE/Qatar), Patriot PAC-3 (UAE/KSA/Qatar), Arrow-3 (KSA, first combat use). Israel reported critically low on BM interceptors to Washington on D+15 (Semafor) — emerging coalition-wide interceptor depletion risk." />
+                <AssessCard color={C.olive} title="Cruise Missiles — 17 Total (15 UAE + 2 Qatar)"
+                  body="15 Ya Ali/Paveh CMs confirmed against UAE through D+15 (2 on D+0, 6 on D+2, 7 on D+11). The D+11 salvo marked a significant resumption after an 8-day pause, likely reflecting forward-deployed inventory committed to the UAE axis. All 15 intercepted per UAE MOD. 2 CMs reported toward Qatar (D+12, D+13) — first confirmed CM use on the Qatar axis, coinciding with Qatar's first civilian evacuation orders (D+14). No CMs reported toward KSA. Total CM inventory expenditure remains low relative to BM/UAV, consistent with Iran reserving precision stocks for high-value targets." />
               </div>
               <div style={{display:"flex",gap:14,flexWrap:"wrap"}}>
                 <AssessCard color={C.crimson} title="Drones / UAVs — Sustained Gulf-Wide Saturation"
-                  body="Shahed-136/238-type UAVs dominate volume across all three theaters: UAE (1,606), KSA est. (371), Qatar est. (85) — combined 2,062. After a D+1 surge to ~398, counts stabilised in a 120–167/day plateau from D+3 through D+8. D+9–D+10 broke the plateau (~67 and ~53 combined). D+11 saw a UAE UAV rebound to 39 alongside the CM salvo. D+12–D+14 featured a KSA UAV surge peaking at 65/day (D+14) — the highest single-day KSA count — likely reflecting redirected inventory as UAE/Qatar stocks depleted. D+15 collapsed to ~34 combined (93% below D+0 peak), consistent with near-terminal IRGC depletion across all axes." />
+                  body="Shahed-136/238-type UAVs dominate volume across all three theaters: UAE (1,606), KSA est. (371), Qatar est. (85) — combined 2,062. After a D+1 surge to ~398, counts stabilised in a 120–167/day plateau from D+3 through D+8. D+9–D+10 broke the plateau (~67 and ~53 combined). D+11 saw a UAE UAV rebound to 39 alongside the CM salvo. D+12–D+14 featured a KSA UAV surge peaking at 65/day (D+14) — the highest single-day KSA count — likely reflecting redirected inventory as UAE/Qatar stocks depleted. D+15 collapsed to ~34 combined (93% below D+0 peak). On D+16, a drone penetrated or bypassed UAE air defences and struck Fujairah's major oil bunkering hub — triggering a large fire and suspension of oil loading operations — the second Fujairah strike in 48 hours. CENTCOM assessed drone rates approximately 83% below peak as of D+5." />
                 <AssessCard color={C.brightCrimson} title="Targets and Effects — All Three Theaters"
-                  body="UAE: Al Dhafra AB, Al Minhad AB, Jebel Ali Port, Dubai International, Fujairah Oil Industry Zone (D+9), Al Ruwais Industrial City (D+10–D+11, confirmed D+11 strike — ADNOC refinery fire and shutdown). KSA: KKMC, Tabuk Air Base, King Fahd Industrial Port, Prince Sultan AB/al-Kharj (D+9–D+15), Riyadh Diplomatic Quarter (D+12). Qatar: Al Udeid AB (AFCENT HQ) — 152 est. BMs plus UAV attacks, signalling sustained intent to degrade CENTCOM C2. Civilian toll: UAE 6 KIA / 142 WIA; KSA 3 KIA / 29 WIA; Qatar 0 KIA / 4 WIA." />
+                  body="UAE: Al Dhafra AB (IRGC 10-missile + drone package D+14–15, citing 'intelligence support role'), Fujairah oil bunkering hub (two strikes in 48 hrs, D+14 and D+16 — second confirmed penetration), IRGC explicitly designated Jebel Ali, Khalifa, and Fujairah ports as targets; ADNOC Ruwais refinery (922,000 bpd) shutdown from D+10; Dubai International (fuel depot fire). KSA: Prince Sultan AB/al-Kharj (6 BM D+14, 3 WIA — first confirmed KSA BM casualties), ~10 drones over Riyadh + 3–4 Eastern Region D+15. Qatar: Al Udeid AB (AFCENT HQ) — 152 est. BMs plus UAV attacks; first civilian evacuation orders D+14; QatarEnergy force majeure on all LNG since D+4. Civilian toll: UAE 6 KIA / 142 WIA; KSA 2 KIA / 12 WIA; Qatar 0 KIA / 16 WIA." />
               </div>
             </div>
 
@@ -364,7 +364,7 @@
                     <MetricBox value="~D+18"    label="to-zero projection*" />
                   </div>
                   <p style={{fontSize:12,lineHeight:1.65,color:C.sub,margin:0}}>
-                    Plateau sustained primarily by UAE drone volume through D+8 (mean ~155/day combined). Qatar BM series tapers D+2–D+8 (12 → 8 → 5 → 4 → 2 → 1), with a D+9 resurgence to 17 indicating partial TEL reconstitution. KSA enters near-zero by D+4. D+9–D+10 (~67 and ~53 combined) mark the initial plateau break. D+11–D+14 saw episodic surges — UAE 7 CMs (D+11), KSA 65 UAVs (D+14) — with no sustained recovery. D+15 dropped to ~34 combined; sustained multi-axis depletion now projects cessation ~D+18 absent resupply.
+                    Plateau sustained primarily by UAE drone volume through D+8 (mean ~155/day combined). Qatar BM series tapers D+2–D+8 (12 → 8 → 5 → 4 → 2 → 1), with a D+9 resurgence to 17 indicating partial TEL reconstitution. KSA enters near-zero by D+4. D+9–D+10 (~67 and ~53 combined) mark the initial plateau break. D+11–D+14 saw episodic surges — UAE 7 CMs (D+11), KSA 65 UAVs (D+14) — with no sustained recovery. D+15 dropped to ~34 combined. Despite volume collapse, D+16 Fujairah drone penetration demonstrates residual precision strike capacity persists even at terminal inventory levels. Iran's targeting logic has shifted from predominantly US military bases toward energy and port infrastructure — an economic coercion strategy accelerated by the US Kharg Island strike on D+14.
                   </p>
                 </div>
               </div>
@@ -373,11 +373,11 @@
                   Phase III — Projected Outlook (D+7 Onward)
                 </div>
                 <p style={{fontSize:13,lineHeight:1.65,color:C.text,margin:0}}>
-                  Three scenarios: <strong>(A) Continued Attrition Plateau</strong> (~10%) — ruled out by D+9–D+15 sustained multi-axis depletion; residual probability covers sporadic harassment only. <strong>(B) Secondary Spike</strong> (~30%) — D+11 CM resumption, D+13 Qatar BM (7), and D+14 KSA UAV surge (65) confirm Iran retains episodic strike capacity; full recovery unlikely absent confirmed resupply, with Al Udeid the primary aim point given 152 est. BMs against Qatar. <strong>(C) Rapid De-escalation</strong> (~60%) — D+15 combined at ~34 (93% below D+0 peak; ~78% below plateau mean) reflects near-terminal inventory across all axes. Cessation most likely within 48–72 hours absent external resupply or political escalation. The D+15 collapse is the dominant analytical signal.
+                  Three scenarios: <strong>(A) Continued Attrition Plateau</strong> (~5%) — ruled out by D+9–D+15 sustained multi-axis depletion; residual probability covers sporadic harassment only. <strong>(B) Secondary Spike / Precision Targeting Shift</strong> (~35%) — D+16 Fujairah penetration, D+14–15 IRGC 10-missile hypersonic package against Al Dhafra, and explicit port targeting declarations confirm Iran retains episodic precision strike capacity despite volume collapse; targeting has shifted to economic coercion (energy/port infrastructure) accelerated by US Kharg Island strike; Israel's reported interceptor shortage (Semafor, D+15) introduces coalition-wide air defence degradation risk within days to weeks. <strong>(C) Rapid De-escalation</strong> (~60%) — D+15 combined at ~34 (93% below D+0 peak; ~78% below plateau mean) reflects near-terminal inventory across all axes; however, no credible off-ramp visible — new Supreme Leader Mojtaba Khamenei conditioned halt on closure of all US bases in region; Hormuz remains closed. Cessation of mass salvoes likely within 48–72 hours; residual precision strikes (Fujairah-type) may persist beyond inventory depletion of mass-attack platforms.
                 </p>
               </div>
               <div style={{fontSize:10,color:C.gray,fontFamily:"sans-serif",fontStyle:"italic",lineHeight:1.6}}>
-                * Phase I/II projections based on D+2–D+8 trend data. D+9–D+15 sustained depletion incorporated; D+11 CM resumption and D+14 KSA UAV surge treated as episodic surges within terminal inventory trend. Phase III revised as of D+15. Analytical judgements only; not classified assessments.
+                * Phase I/II projections based on D+2–D+8 trend data. D+9–D+15 sustained depletion incorporated; D+11 CM resumption, D+14 KSA UAV surge, and D+16 Fujairah drone penetration treated as episodic precision actions within terminal mass-inventory trend. Targeting shift to economic infrastructure post-D+14 Kharg Island strike assessed as new escalatory driver. Phase III revised as of D+16. Analytical judgements only; not classified assessments.
               </div>
             </div>
 
