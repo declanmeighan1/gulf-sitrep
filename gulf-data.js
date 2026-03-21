@@ -5,8 +5,8 @@
 
 
 window.SITREP = {
-  asOfDate:    "18 MAR 2026",
-  updatedDate: "18 Mar 2026",
+  asOfDate:    "21 MAR 2026",
+  updatedDate: "21 Mar 2026",
 
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
@@ -29,6 +29,10 @@ window.SITREP = {
     { date:"Mar 15", day:"D+15", bm:4,   cm:0,  uav:6,   total:10,   bmD:-5,   cmD:0,    uavD:-27,  totD:-32  },
     { date:"Mar 16", day:"D+16", bm:6,   cm:0,  uav:21,  total:27,   bmD:2,    cmD:0,    uavD:15,   totD:17   },
     { date:"Mar 17", day:"D+17", bm:10,  cm:0,  uav:45,  total:55,   bmD:4,    cmD:0,    uavD:24,   totD:28   },
+    { date:"Mar 18", day:"D+18", bm:13,  cm:0,  uav:27,  total:40,   bmD:3,    cmD:0,    uavD:-18,  totD:-15  },
+    { date:"Mar 19", day:"D+19", bm:7,   cm:0,  uav:15,  total:22,   bmD:-6,   cmD:0,    uavD:-12,  totD:-18  },
+    { date:"Mar 20", day:"D+20", bm:4,   cm:0,  uav:26,  total:30,   bmD:-3,   cmD:0,    uavD:11,   totD:8    },
+    { date:"Mar 21", day:"D+21", bm:3,   cm:0,  uav:8,   total:11,   bmD:-1,   cmD:0,    uavD:-18,  totD:-19  },
   ],
 
 
@@ -51,14 +55,16 @@ window.SITREP = {
     { date:"Mar 14", day:"D+14", bm:1,   cm:0,  uav:65,  total:66,   bmD:-1,   cmD:0,    uavD:27,   totD:26   },
     { date:"Mar 15", day:"D+15", bm:0,   cm:0,  uav:18,  total:18,   bmD:-1,   cmD:0,    uavD:-47,  totD:-48  },
     { date:"Mar 16", day:"D+16", bm:0,   cm:0,  uav:60,  total:60,   bmD:0,    cmD:0,    uavD:42,   totD:42   },
-    { date:"Mar 17", day:"D+17", bm:1,   cm:0,  uav:24,  total:25,   bmD:1,    cmD:0,    uavD:-36,  totD:-35  },
+    { date:"Mar 17", day:"D+17", bm:1,   cm:0,  uav:95,  total:96,   bmD:1,    cmD:0,    uavD:35,   totD:36   },
+    { date:"Mar 18", day:"D+18", bm:10,  cm:0,  uav:40,  total:50,   bmD:9,    cmD:0,    uavD:-55,  totD:-46  },
+    { date:"Mar 19", day:"D+19", bm:3,   cm:0,  uav:65,  total:68,   bmD:-7,   cmD:0,    uavD:25,   totD:18   },
+    { date:"Mar 20", day:"D+20", bm:2,   cm:0,  uav:30,  total:32,   bmD:-1,   cmD:0,    uavD:-35,  totD:-36  },
+    { date:"Mar 21", day:"D+21", bm:1,   cm:0,  uav:20,  total:21,   bmD:-1,   cmD:0,    uavD:-10,  totD:-11  },
   ],
 
 
   // ── Qatar (ESTIMATED — Qatar MOD / CENTCOM / LWJ) ────────────────────────────────────────────
-  // Open sources indicate 152 BMs toward Qatar (period total, D+0–D+15).
-  // D+16: Qatar MOD confirmed 14 BMs (13 intercepted, 1 fell uninhabited area) + "several drones" (exact count unspecified).
-  // D+17: Qatar MOD confirmed "second wave of missile attacks intercepted" — no breakdown published.
+  // Open sources indicate 175 BMs toward Qatar (period total, D+0–D+21). Qatar MOD claims 327 BM faced since D+0.
   QAT: [
     { date:"Feb 28", day:"D+0",  bm:48,  cm:0,  uav:11,  total:59,   bmD:null, cmD:null, uavD:null,  totD:null  },
     { date:"Mar 1",  day:"D+1",  bm:22,  cm:0,  uav:14,  total:36,   bmD:-26,  cmD:0,    uavD:3,     totD:-23   },
@@ -76,7 +82,11 @@ window.SITREP = {
     { date:"Mar 13", day:"D+13", bm:7,   cm:1, uav:10, total:18,   bmD:5,    cmD:0,    uavD:6,    totD:11   },
     { date:"Mar 14", day:"D+14", bm:4,   cm:0,  uav:4,   total:8,    bmD:-3,   cmD:-1,   uavD:-6,   totD:-10  },
     { date:"Mar 15", day:"D+15", bm:3,   cm:0,  uav:3,   total:6,    bmD:-1,   cmD:0,    uavD:-1,   totD:-2   },
-    { date:"Mar 16", day:"D+16", bm:14,  cm:0,  uav:0,   total:14,   bmD:11,   cmD:0,    uavD:-3,   totD:8    },
-    { date:"Mar 17", day:"D+17", pending:true },
+    { date:"Mar 16", day:"D+16", bm:2,   cm:0,  uav:8,   total:10,   bmD:-1,   cmD:0,    uavD:5,    totD:4    },
+    { date:"Mar 17", day:"D+17", bm:3,   cm:0,  uav:10,  total:13,   bmD:1,    cmD:0,    uavD:2,    totD:3    },
+    { date:"Mar 18", day:"D+18", bm:8,   cm:2,  uav:15,  total:25,   bmD:5,    cmD:2,    uavD:5,    totD:12   },
+    { date:"Mar 19", day:"D+19", bm:5,   cm:1,  uav:12,  total:18,   bmD:-3,   cmD:-1,   uavD:-3,   totD:-7   },
+    { date:"Mar 20", day:"D+20", bm:3,   cm:0,  uav:8,   total:11,   bmD:-2,   cmD:-1,   uavD:-4,   totD:-7   },
+    { date:"Mar 21", day:"D+21", bm:2,   cm:0,  uav:6,   total:8,    bmD:-1,   cmD:0,    uavD:-2,   totD:-3   },
   ],
 };
