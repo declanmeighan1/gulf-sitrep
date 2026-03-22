@@ -1,15 +1,15 @@
-// ─── Gulf Theater SITREP — Data File ──────────────────────────────────────────────────────
+// ─── Gulf Theater SITREP — Data File ──────────────────────────────────────────────
 // AUTO-UPDATED DAILY at 12:00 by scheduled task.
 // Edit only the data arrays below. Do NOT edit index.html.
 // D+0 = 28 February 2026
 
 
 window.SITREP = {
-  asOfDate:    "21 MAR 2026",
-  updatedDate: "21 Mar 2026",
+  asOfDate:    "22 MAR 2026",
+  updatedDate: "22 Mar 2026",
 
 
-  // ── UAE (CONFIRMED — UAE MOD / Gulf News / The National) ─────────────────────────────────────
+  // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
   UAE: [
     { date:"Feb 28", day:"D+0",  bm:137, cm:2,  uav:209, total:348,  bmD:null, cmD:null, uavD:null,  totD:null  },
     { date:"Mar 1",  day:"D+1",  bm:28,  cm:0,  uav:332, total:360,  bmD:-109, cmD:-2,   uavD:123,   totD:12    },
@@ -33,12 +33,15 @@ window.SITREP = {
     { date:"Mar 19", day:"D+19", bm:7,   cm:0,  uav:15,  total:22,   bmD:-6,   cmD:0,    uavD:-12,  totD:-18  },
     { date:"Mar 20", day:"D+20", bm:4,   cm:0,  uav:26,  total:30,   bmD:-3,   cmD:0,    uavD:11,   totD:8    },
     { date:"Mar 21", day:"D+21", bm:3,   cm:0,  uav:8,   total:11,   bmD:-1,   cmD:0,    uavD:-18,  totD:-19  },
+    { date:"Mar 22", day:"D+22", bm:4,   cm:0,  uav:25,  total:29,   bmD:1,    cmD:0,    uavD:17,   totD:18   },
   ],
 
 
-  // ── KSA (Saudi MOD spokesperson confirmed — via LWJ / Gulf News) ────────────────────────
-  // D+17–D+21: Saudi MOD spokesperson (Maj Gen Turki Al-Malki) confirmed intercepts only.
+  // ── KSA (Saudi MOD spokesperson confirmed engagements — via LWJ / Gulf News) ─────────────────
+  // D+17–D+22 figures are Saudi MOD spokesperson (Maj Gen Turki Al-Malki) confirmed intercepts only.
   // These are MINIMUM confirmed — additional engagements may not have been publicly announced.
+  // D+22: 3 BM toward Riyadh Province (1 intercepted, 2 fell uninhabited); 21 drones Eastern Region (3+4+5+9 per SPA).
+  // D+22: Riyadh expelled 5 Iranian diplomatic staff (military attache + deputy + 3 others) — persona non grata.
   // No CMs reported toward KSA in any Saudi MOD statement.
   KSA: [
     { date:"Feb 28", day:"D+0",  bm:22,  cm:0,  uav:43,  total:65,   bmD:null, cmD:null, uavD:null,  totD:null  },
@@ -63,6 +66,7 @@ window.SITREP = {
     { date:"Mar 19", day:"D+19", bm:1,   cm:0,  uav:9,   total:10,   bmD:-6,   cmD:0,    uavD:-1,   totD:-7   },
     { date:"Mar 20", day:"D+20", bm:0,   cm:0,  uav:7,   total:7,    bmD:-1,   cmD:0,    uavD:-2,   totD:-3   },
     { date:"Mar 21", day:"D+21", bm:0,   cm:0,  uav:15,  total:15,   bmD:0,    cmD:0,    uavD:8,    totD:8    },
+    { date:"Mar 22", day:"D+22", bm:3,   cm:0,  uav:21,  total:24,   bmD:3,    cmD:0,    uavD:6,    totD:9    },
   ],
 
 
@@ -70,7 +74,7 @@ window.SITREP = {
   // D+16: Qatar MOD confirmed 14 BM (13 intercepted + 1 fell uninhabited area), "several drones" (count unspecified).
   // D+17: Qatar MOD confirmed two separate missile attack interceptions — daily totals not stated.
   // D+18: Qatar MOD confirmed 5 BM (4 intercepted + 1 fell in Ras Laffan Industrial City); additional attacks per LWJ.
-  // D+19–D+21: Attacks continued per LWJ but no specific Qatar MOD daily figures available. Marked pending.
+  // D+19–D+22: Attacks continued per LWJ but no specific Qatar MOD daily figures available. Marked pending.
   QAT: [
     { date:"Feb 28", day:"D+0",  bm:48,  cm:0,  uav:11,  total:59,   bmD:null, cmD:null, uavD:null,  totD:null  },
     { date:"Mar 1",  day:"D+1",  bm:22,  cm:0,  uav:14,  total:36,   bmD:-26,  cmD:0,    uavD:3,     totD:-23   },
@@ -94,5 +98,6 @@ window.SITREP = {
     { date:"Mar 19", day:"D+19", pending:true },
     { date:"Mar 20", day:"D+20", pending:true },
     { date:"Mar 21", day:"D+21", pending:true },
+    { date:"Mar 22", day:"D+22", pending:true },
   ],
 };
