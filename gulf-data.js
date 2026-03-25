@@ -5,8 +5,8 @@
 
 
 window.SITREP = {
-  asOfDate:    "22 MAR 2026",
-  updatedDate: "22 Mar 2026",
+  asOfDate:    "25 MAR 2026",
+  updatedDate: "25 Mar 2026",
 
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
@@ -34,14 +34,22 @@ window.SITREP = {
     { date:"Mar 20", day:"D+20", bm:4,   cm:0,  uav:26,  total:30,   bmD:-3,   cmD:0,    uavD:11,   totD:8    },
     { date:"Mar 21", day:"D+21", bm:3,   cm:0,  uav:8,   total:11,   bmD:-1,   cmD:0,    uavD:-18,  totD:-19  },
     { date:"Mar 22", day:"D+22", bm:4,   cm:0,  uav:25,  total:29,   bmD:1,    cmD:0,    uavD:17,   totD:18   },
+    { date:"Mar 23", day:"D+23", bm:7,   cm:0,  uav:16,  total:23,   bmD:3,    cmD:0,    uavD:-9,   totD:-6   },
+    { date:"Mar 24", day:"D+24", bm:5,   cm:0,  uav:17,  total:22,   bmD:-2,   cmD:0,    uavD:1,    totD:-1   },
+    { date:"Mar 25", day:"D+25", bm:3,   cm:0,  uav:9,   total:12,   bmD:-2,   cmD:0,    uavD:-8,   totD:-10  },
   ],
 
 
   // ── KSA (Saudi MOD spokesperson confirmed engagements — via LWJ / Gulf News) ─────────────────
-  // D+17–D+22 figures are Saudi MOD spokesperson (Maj Gen Turki Al-Malki) confirmed intercepts only.
+  // D+17–D+25 figures are Saudi MOD spokesperson (Maj Gen Turki Al-Malki) confirmed intercepts only.
   // These are MINIMUM confirmed — additional engagements may not have been publicly announced.
   // D+22: 3 BM toward Riyadh Province (1 intercepted, 2 fell uninhabited); 21 drones Eastern Region (3+4+5+9 per SPA).
   // D+22: Riyadh expelled 5 Iranian diplomatic staff (military attache + deputy + 3 others) — persona non grata.
+  // D+23: 2 BM targeting Riyadh (1 intercepted, 1 fell inhabited area); 18 drones Eastern Province (multiple waves per Saudi MOD).
+  // D+23: Trump postponed 48-hr Hormuz ultimatum for 5 days citing "productive talks"; Iran denied any negotiations.
+  // D+24: 1 BM + 12 drones; US sent 15-point peace plan to Iran via Pakistan. Trump declared "regime change" in Iran.
+  // D+25: 1 BM (debris fell on houses in Eastern Province) + 24 drones (3+21 in waves) Eastern Province per Saudi MOD/SPA.
+  // D+25: Kuwait airport fuel tank hit by drone; Saudi/Kuwait targeted as war enters 26th day.
   // No CMs reported toward KSA in any Saudi MOD statement.
   KSA: [
     { date:"Feb 28", day:"D+0",  bm:22,  cm:0,  uav:43,  total:65,   bmD:null, cmD:null, uavD:null,  totD:null  },
@@ -67,6 +75,9 @@ window.SITREP = {
     { date:"Mar 20", day:"D+20", bm:0,   cm:0,  uav:7,   total:7,    bmD:-1,   cmD:0,    uavD:-2,   totD:-3   },
     { date:"Mar 21", day:"D+21", bm:0,   cm:0,  uav:15,  total:15,   bmD:0,    cmD:0,    uavD:8,    totD:8    },
     { date:"Mar 22", day:"D+22", bm:3,   cm:0,  uav:21,  total:24,   bmD:3,    cmD:0,    uavD:6,    totD:9    },
+    { date:"Mar 23", day:"D+23", bm:2,   cm:0,  uav:18,  total:20,   bmD:-1,   cmD:0,    uavD:-3,   totD:-4   },
+    { date:"Mar 24", day:"D+24", bm:1,   cm:0,  uav:12,  total:13,   bmD:-1,   cmD:0,    uavD:-6,   totD:-7   },
+    { date:"Mar 25", day:"D+25", bm:1,   cm:0,  uav:24,  total:25,   bmD:0,    cmD:0,    uavD:12,   totD:12   },
   ],
 
 
@@ -74,7 +85,7 @@ window.SITREP = {
   // D+16: Qatar MOD confirmed 14 BM (13 intercepted + 1 fell uninhabited area), "several drones" (count unspecified).
   // D+17: Qatar MOD confirmed two separate missile attack interceptions — daily totals not stated.
   // D+18: Qatar MOD confirmed 5 BM (4 intercepted + 1 fell in Ras Laffan Industrial City); additional attacks per LWJ.
-  // D+19–D+22: Attacks continued per LWJ but no specific Qatar MOD daily figures available. Marked pending.
+  // D+19–D+25: Attacks continued per LWJ / Al Jazeera but no specific Qatar MOD daily figures available. Marked pending.
   QAT: [
     { date:"Feb 28", day:"D+0",  bm:48,  cm:0,  uav:11,  total:59,   bmD:null, cmD:null, uavD:null,  totD:null  },
     { date:"Mar 1",  day:"D+1",  bm:22,  cm:0,  uav:14,  total:36,   bmD:-26,  cmD:0,    uavD:3,     totD:-23   },
@@ -99,5 +110,8 @@ window.SITREP = {
     { date:"Mar 20", day:"D+20", pending:true },
     { date:"Mar 21", day:"D+21", pending:true },
     { date:"Mar 22", day:"D+22", pending:true },
+    { date:"Mar 23", day:"D+23", pending:true },
+    { date:"Mar 24", day:"D+24", pending:true },
+    { date:"Mar 25", day:"D+25", pending:true },
   ],
 };
