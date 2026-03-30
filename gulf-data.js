@@ -5,8 +5,8 @@
 
 
 window.SITREP = {
-  asOfDate:    "25 MAR 2026",
-  updatedDate: "25 Mar 2026",
+  asOfDate:    "30 MAR 2026",
+  updatedDate: "30 Mar 2026",
 
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
@@ -37,6 +37,10 @@ window.SITREP = {
     { date:"Mar 23", day:"D+23", bm:7,   cm:0,  uav:16,  total:23,   bmD:3,    cmD:0,    uavD:-9,   totD:-6   },
     { date:"Mar 24", day:"D+24", bm:5,   cm:0,  uav:17,  total:22,   bmD:-2,   cmD:0,    uavD:1,    totD:-1   },
     { date:"Mar 25", day:"D+25", bm:3,   cm:0,  uav:9,   total:12,   bmD:-2,   cmD:0,    uavD:-8,   totD:-10  },
+    { date:"Mar 26", day:"D+26", bm:12,  cm:0,  uav:11,  total:23,   bmD:9,    cmD:0,    uavD:2,    totD:11   },
+    { date:"Mar 27", day:"D+27", bm:6,   cm:0,  uav:9,   total:15,   bmD:-6,   cmD:0,    uavD:-2,   totD:-8   },
+    { date:"Mar 28", day:"D+28", bm:20,  cm:0,  uav:37,  total:57,   bmD:14,   cmD:0,    uavD:28,   totD:42   },
+    { date:"Mar 29", day:"D+29", bm:16,  cm:0,  uav:42,  total:58,   bmD:-4,   cmD:0,    uavD:5,    totD:1    },
   ],
 
 
@@ -50,6 +54,13 @@ window.SITREP = {
   // D+24: 1 BM + 12 drones; US sent 15-point peace plan to Iran via Pakistan. Trump declared "regime change" in Iran.
   // D+25: 1 BM (debris fell on houses in Eastern Province) + 24 drones (3+21 in waves) Eastern Province per Saudi MOD/SPA.
   // D+25: Kuwait airport fuel tank hit by drone; Saudi/Kuwait targeted as war enters 26th day.
+  // D+26: 1 BM targeting Riyadh (intercepted) + 4 drones Eastern Province per Saudi MOD/AA.
+  // D+26: GCC joint condemnation (UAE, KSA, Kuwait, Bahrain, Qatar, Jordan) of Iran and affiliated armed groups.
+  // D+26: Trump extended Hormuz deadline by 10 days to 6 April citing "ongoing talks"; Iran rejected US 15-point plan as "maximalist, unreasonable".
+  // D+27: 9 drones intercepted Eastern Province per Saudi MOD. Separate: Prince Sultan Air Base struck by Iranian BM+drones — 15 US troops wounded (5 serious), KC-135 destroyed, E-3 AWACS damaged (WaPo/Aviationist).
+  // D+28: 6 BM + 26 drones (Riyadh + Eastern Province) per Saudi MOD/Asharq Al-Awsat. Houthis entered war firing missiles at Israel. Kuwait airport radar "significant damage" from drone strike.
+  // D+29: 2 BM toward Riyadh (1 intercepted, 1 fell uninhabited) + 14 drones (13 Eastern Province + 1 Northern Borders) per Saudi Gazette.
+  // D+30: 3 BM toward Riyadh (1 intercepted, 2 fell uninhabited) + 15 drones Eastern Province per Saudi Gazette/Saudi MOD.
   // No CMs reported toward KSA in any Saudi MOD statement.
   KSA: [
     { date:"Feb 28", day:"D+0",  bm:22,  cm:0,  uav:43,  total:65,   bmD:null, cmD:null, uavD:null,  totD:null  },
@@ -78,6 +89,11 @@ window.SITREP = {
     { date:"Mar 23", day:"D+23", bm:2,   cm:0,  uav:18,  total:20,   bmD:-1,   cmD:0,    uavD:-3,   totD:-4   },
     { date:"Mar 24", day:"D+24", bm:1,   cm:0,  uav:12,  total:13,   bmD:-1,   cmD:0,    uavD:-6,   totD:-7   },
     { date:"Mar 25", day:"D+25", bm:1,   cm:0,  uav:24,  total:25,   bmD:0,    cmD:0,    uavD:12,   totD:12   },
+    { date:"Mar 26", day:"D+26", bm:1,   cm:0,  uav:4,   total:5,    bmD:0,    cmD:0,    uavD:-20,  totD:-20  },
+    { date:"Mar 27", day:"D+27", bm:0,   cm:0,  uav:9,   total:9,    bmD:-1,   cmD:0,    uavD:5,    totD:4    },
+    { date:"Mar 28", day:"D+28", bm:6,   cm:0,  uav:26,  total:32,   bmD:6,    cmD:0,    uavD:17,   totD:23   },
+    { date:"Mar 29", day:"D+29", bm:2,   cm:0,  uav:14,  total:16,   bmD:-4,   cmD:0,    uavD:-12,  totD:-16  },
+    { date:"Mar 30", day:"D+30", bm:3,   cm:0,  uav:15,  total:18,   bmD:1,    cmD:0,    uavD:1,    totD:2    },
   ],
 
 
@@ -85,7 +101,9 @@ window.SITREP = {
   // D+16: Qatar MOD confirmed 14 BM (13 intercepted + 1 fell uninhabited area), "several drones" (count unspecified).
   // D+17: Qatar MOD confirmed two separate missile attack interceptions — daily totals not stated.
   // D+18: Qatar MOD confirmed 5 BM (4 intercepted + 1 fell in Ras Laffan Industrial City); additional attacks per LWJ.
-  // D+19–D+25: Attacks continued per LWJ / Al Jazeera but no specific Qatar MOD daily figures available. Marked pending.
+  // D+19–D+30: Attacks continued per LWJ / Al Jazeera but no specific Qatar MOD daily figures available. Marked pending.
+  // D+28: Qatar MOD confirmed "all drones" intercepted but no specific count given (QNA / LiveUAMap / Marhaba Qatar).
+  // D+26: GCC joint condemnation issued with five other states.
   QAT: [
     { date:"Feb 28", day:"D+0",  bm:48,  cm:0,  uav:11,  total:59,   bmD:null, cmD:null, uavD:null,  totD:null  },
     { date:"Mar 1",  day:"D+1",  bm:22,  cm:0,  uav:14,  total:36,   bmD:-26,  cmD:0,    uavD:3,     totD:-23   },
@@ -113,5 +131,10 @@ window.SITREP = {
     { date:"Mar 23", day:"D+23", pending:true },
     { date:"Mar 24", day:"D+24", pending:true },
     { date:"Mar 25", day:"D+25", pending:true },
+    { date:"Mar 26", day:"D+26", pending:true },
+    { date:"Mar 27", day:"D+27", pending:true },
+    { date:"Mar 28", day:"D+28", pending:true },
+    { date:"Mar 29", day:"D+29", pending:true },
+    { date:"Mar 30", day:"D+30", pending:true },
   ],
 };
