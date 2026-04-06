@@ -39,9 +39,7 @@
     } = window.Recharts;
 
     // ── Read live data from gulf-data.js ──────────────────────────────────────
-    const { UAE, KSA, QAT, asOfDate, updatedDate } = window.SITREP;
-
-    // ── Colour palette ─────────────────────────────────────────────────────────
+        // ── Colour palette ─────────────────────────────────────────────────────────
     const C = {
       bg:"#f5f0e8", cardBg:"#ffffff", border:"#d4c9b8", tableHdr:"#e2d9c8",
       rowAlt:"#f0ebe1", crimson:"#8B1A1A", brightCrimson:"#C41230",
@@ -58,19 +56,6 @@
     const TD = { padding:"9px 13px", borderBottom:"1px solid #e8e0d0", verticalAlign:"middle" };
 
     // ──── Computed chart data ──────────────────────────────────────────────────────────────
-    const CONFIRMED = UAE.filter(r => !r.pending);
-    const CHART = CONFIRMED.map((r, i) => {
-      const k = KSA[i] || {}; const q = QAT[i] || {};
-      return {
-        name: r.date,
-        "UAE": r.total, "KSA": k.total||0, "Qatar": q.total||0,
-        "Gulf Total": r.total + (k.total||0) + (q.total||0),
-        "Ballistic Missiles": r.bm + (k.bm||0) + (q.bm||0),
-        "Drones / UAVs": r.uav + (k.uav||0) + (q.uav||0),
-        "Cruise Missiles": r.cm + (k.cm||0) + (q.cm||0),
-      };
-    });
-
     function sumSeries(rows) {
       const c = rows.filter(r => !r.pending);
       return {
@@ -80,15 +65,6 @@
         total: c.reduce((s,r)=>s+(r.total||0),0),
       };
     }
-    const T = { uae: sumSeries(UAE), ksa: sumSeries(KSA), qat: sumSeries(QAT) };
-    const GRAND = {
-      bm:    T.uae.bm+T.ksa.bm+T.qat.bm,
-      cm:    T.uae.cm+T.ksa.cm+T.qat.cm,
-      uav:   T.uae.uav+T.ksa.uav+T.qat.uav,
-      total: T.uae.total+T.ksa.total+T.qat.total,
-    };
-
-    // ──── Sub-components ────────────────────────────────────────────────────────────────
     function Delta({ v }) {
       if (v === null || v === undefined) return null;
       if (v === 0) return <span style={{color:C.gray,fontSize:10,marginLeft:4,fontFamily:"sans-serif"}}>● 0</span>;
@@ -217,6 +193,31 @@
 
     // ──── Main dashboard ────────────────────────────────────────────────────────────────
     function SituationReport() {
+      // ── Data: read live from window.SITREP on every render ────────────────────
+const { UAE, KSA, QAT, asOfDate, updatedDate } = window.SITREP;
+    const CONFIRMED = UAE.filter(r => !r.pending);
+    const CHART = CONFIRMED.map((r, i) => {
+      const k = KSA[i] || {}; const q = QAT[i] || {};
+      return {
+        name: r.date,
+        "UAE": r.total, "KSA": k.total||0, "Qatar": q.total||0,
+        "Gulf Total": r.total + (k.total||0) + (q.total||0),
+        "Ballistic Missiles": r.bm + (k.bm||0) + (q.bm||0),
+        "Drones / UAVs": r.uav + (k.uav||0) + (q.uav||0),
+        "Cruise Missiles": r.cm + (k.cm||0) + (q.cm||0),
+      };
+    });
+    const T = { uae: sumSeries(UAE), ksa: sumSeries(KSA), qat: sumSeries(QAT) };
+    const GRAND = {
+      bm:    T.uae.bm+T.ksa.bm+T.qat.bm,
+      cm:    T.uae.cm+T.ksa.cm+T.qat.cm,
+      uav:   T.uae.uav+T.ksa.uav+T.qat.uav,
+      total: T.uae.total+T.ksa.total+T.qat.total,
+    };
+
+    // ──── Sub-components ────────────────────────────────────────────────────────────────
+      // ─────────────────────────────────────────────────────────────────────────────
+
       return (
         <div style={{background:C.bg,minHeight:"100vh",fontFamily:"Georgia,serif",color:C.text,padding:"32px 24px"}}>
           <div style={{maxWidth:1020,margin:"0 auto"}}>
