@@ -5,8 +5,8 @@
 
 
 window.SITREP = {
-  asOfDate:    "30 MAR 2026",
-  updatedDate: "30 Mar 2026",
+  asOfDate:    "06 APR 2026",
+  updatedDate: "06 Apr 2026",
 
 
   // ── UAE (CONFIRMED — UAE MOD / LWJ) ──────────────────────────────────────────────────
@@ -41,6 +41,15 @@ window.SITREP = {
     { date:"Mar 27", day:"D+27", bm:6,   cm:0,  uav:9,   total:15,   bmD:-6,   cmD:0,    uavD:-2,   totD:-8   },
     { date:"Mar 28", day:"D+28", bm:20,  cm:0,  uav:37,  total:57,   bmD:14,   cmD:0,    uavD:28,   totD:42   },
     { date:"Mar 29", day:"D+29", bm:16,  cm:0,  uav:42,  total:58,   bmD:-4,   cmD:0,    uavD:5,    totD:1    },
+    // ── NEW: D+30 → D+37  |  UAE MOD (@modgovae)  |  06 Apr 2026 ─────────────────
+    { date:"Mar 30", day:"D+30", bm:11,  cm:0,  uav:27,  total:38,  bmD:-5,   cmD:0,    uavD:-15,  totD:-20 },
+    { date:"Mar 31", day:"D+31", bm:8,   cm:4,  uav:36,  total:48,  bmD:-3,   cmD:4,    uavD:9,    totD:10  },
+    { date:"Apr 1",  day:"D+32", bm:5,   cm:0,  uav:35,  total:40,  bmD:-3,   cmD:-4,   uavD:-1,   totD:-8  },
+    { date:"Apr 2",  day:"D+33", bm:19,  cm:0,  uav:26,  total:45,  bmD:14,   cmD:0,    uavD:-9,   totD:5   },
+    { date:"Apr 3",  day:"D+34", bm:18,  cm:4,  uav:47,  total:69,  bmD:-1,   cmD:4,    uavD:21,   totD:24  },
+    { date:"Apr 4",  day:"D+35", bm:23,  cm:0,  uav:56,  total:79,  bmD:5,    cmD:-4,   uavD:9,    totD:10  },
+    { date:"Apr 5",  day:"D+36", bm:9,   cm:1,  uav:50,  total:60,  bmD:-14,  cmD:1,    uavD:-6,   totD:-19 },
+    { date:"Apr 6",  day:"D+37", pending:true },
   ],
 
 
@@ -94,6 +103,14 @@ window.SITREP = {
     { date:"Mar 28", day:"D+28", bm:6,   cm:0,  uav:26,  total:32,   bmD:6,    cmD:0,    uavD:17,   totD:23   },
     { date:"Mar 29", day:"D+29", bm:2,   cm:0,  uav:14,  total:16,   bmD:-4,   cmD:0,    uavD:-12,  totD:-16  },
     { date:"Mar 30", day:"D+30", bm:3,   cm:0,  uav:15,  total:18,   bmD:1,    cmD:0,    uavD:1,    totD:2    },
+    // ── NEW: D+31 → D+37  |  Saudi MOD (@MoD_Saudi)  |  06 Apr 2026 ──────────────
+    { date:"Mar 31", day:"D+31", pending:true },
+    { date:"Apr 1",  day:"D+32", pending:true },
+    { date:"Apr 2",  day:"D+33", pending:true },
+    { date:"Apr 3",  day:"D+34", pending:true },
+    { date:"Apr 4",  day:"D+35", pending:true },
+    { date:"Apr 5",  day:"D+36", bm:7,   cm:0,  uav:10, total:17, bmD:null, cmD:null, uavD:null, totD:null },
+    { date:"Apr 6",  day:"D+37", pending:true },
   ],
 
 
@@ -136,5 +153,13 @@ window.SITREP = {
     { date:"Mar 28", day:"D+28", pending:true },
     { date:"Mar 29", day:"D+29", pending:true },
     { date:"Mar 30", day:"D+30", pending:true },
+    // ── NEW: D+31 → D+37  |  Qatar MOD (@modqatar)  |  06 Apr 2026 ──────────────
+    { date:"Mar 31", day:"D+31", pending:true },
+    { date:"Apr 1",  day:"D+32", bm:0,   cm:3,  uav:0,  total:3,  bmD:null, cmD:null, uavD:null, totD:null },
+    { date:"Apr 2",  day:"D+33", pending:true },
+    { date:"Apr 3",  day:"D+34", pending:true },
+    { date:"Apr 4",  day:"D+35", pending:true },
+    { date:"Apr 5",  day:"D+36", bm:0,   cm:2,  uav:0,  total:2,  bmD:null, cmD:null, uavD:null, totD:null },
+    { date:"Apr 6",  day:"D+37", pending:true },
   ],
 };
